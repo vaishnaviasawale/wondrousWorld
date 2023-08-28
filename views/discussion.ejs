@@ -1,0 +1,48 @@
+<% layout('/layouts/boilerplate') %>
+<h1>Discussions</h1>
+<h1><%= page.section %></p>
+<h1><%= page.title %></h1>
+<form action="/<%= page.section %>/<%= page.title %>/discussion" method="POST" novalidate class="needs-validation">
+    <div class="mb-3 ml-3 mr-3">
+        <label class="form-label" for="body">Username: ____</label>
+        <textarea class="form-control" name="discussion[body]" id="body" cols="30" rows="5" placeholder="Write a comment" required></textarea>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+    </div>
+    <button class="btn btn-success">Post Comment</button>
+</form>
+<!-- FOLDER 52 Video 5 for hiding and showing form of review -->
+<h2>Comments: </h2>
+<% for (let discussion of page.discussions) { %>
+    <div class="card mb-3">
+        <div class="card-body">
+          <strong><%= discussion.owner.username %></strong>
+            <p><%= discussion.body %></p>
+            <% if (currentUser && discussion.owner.equals(currentUser._id)) {%>
+              <form action="/<%= page.section %>/<%= page.title %>/discussion/<%= discussion._id %>?_method=DELETE" method="POST">
+                  <button class="btn btn-sm btn-danger">Delete</button>
+              </form>
+            <% } %>
+        </div>
+    </div>
+<% } %>    
+
+
+<script>
+(function () {
+  'use strict'
+  const forms = document.querySelectorAll('.needs-validation') 
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>

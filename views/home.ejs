@@ -1,0 +1,135 @@
+<% layout('/layouts/boilerplate') %>
+
+<style>
+  body {
+    background-color: black;
+  }
+</style>
+
+  <carousel>
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://wallpaperaccess.com/full/206340.jpg" class="d-block" alt="..."
+            style="width: 100%;height: 667px;">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>The Starry Night</h3>
+            <h4>The Starry Night is an oil-on-canvas painting by the Dutch Post-Impressionist painter Vincent van Gogh
+            </h4>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://artincontext.org/wp-content/uploads/2021/01/Michelangelo-Pieta-848x530.jpg" class="d-block"
+            alt="..." style="width: 100%;height: 667px;">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>The Pietà</h3>
+            <h4>The Madonna della Pietà is a Roman Catholic dolorous image of Jesus and Mary at Mount Golgotha and is a
+              key work of Italian Renaissance sculpture carved by Michelangelo Buonarroti</h4>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://cdn.destguides.com/files/store/itinerarystop/38939/background_image/jpeg_large_202112291737-6add177e97cb49a1dfeb6a1c71e2520c.jpeg"
+            class="d-block" alt="..." style="width: 100%;height: 667px;">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Louvre</h3>
+            <h4>The Louvre, Paris is home to one of the world's most extensive collections of art, including works from
+              diverse cultures and time periods</h4>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://www.cascada.travel/hubfs/FOTOS%20CASCADA/FOTOS%20PROGRAMAS/ISLAS/ISL005%20Easter%20Island%20Rapa%20Nui/ISL005%20_%20Rapa%20Nui%20_%20.jpg"
+            class="d-block" alt="..." style="width: 100%;height: 667px;">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Moai</h3>
+            <h4>Moai are monolithic human figures carved by the Rapa Nui people on Rapa Nui (Easter Island)</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="prev" style="display: none;">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">&lt;</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="next" style="display: none;">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">&gt;</span>
+    </button>
+    </div>
+  </carousel>
+
+  <cards style="margin-left: 2em; margin-right: 2em;">
+    <div class="row row-cols-1 row-cols-md-3 g-4 ml-2 mr-2">
+      <div class="col-4" style="margin-bottom: 1em; margin-top: 2em; height: 600px;">
+        <a href="/paintings">
+          <div class="card h-100" style="border: none;">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/1200px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg"
+              class="card-img-top h-100" alt="Paintings">
+            <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+              <div class="text" style="text-decoration: none; color: transparent;">Paintings</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-4" style="margin-bottom: 1em; margin-top: 2em; height: 600px;">
+        <a href="/statues">
+          <div class="card h-100" style="border: none;">
+            <img src="https://i.pinimg.com/564x/1e/4a/19/1e4a19b6e4e4cfe37e53d496d8443010.jpg"
+              class="card-img-top h-100" alt="Statues">
+            <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+              <div class="text" style="text-decoration: none; color: transparent;">Statues</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-4" style="margin-bottom: 1em; margin-top: 2em; height: 600px;">
+        <a href="/monuments">
+          <div class="card h-100" style="border: none;">
+            <img src="https://i.pinimg.com/564x/a2/22/26/a2222643cc94bab1c3f00497db29f620.jpg"
+              class="card-img-top h-100" alt="Monuments">
+            <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+              <div class="text" style="text-decoration: none; color: transparent;">Monuments</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-4" style="margin-bottom: 2em; margin-top: 1em; height: 600px;">
+        <a href="google.com">
+          <div class="card h-100" style="border: none;">
+            <img src="https://i.pinimg.com/564x/9d/55/47/9d5547e13604e81c5bf8d3e079f90122.jpg"
+              class="card-img-top h-100" alt="Literature">
+            <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+              <div class="text" style="text-decoration: none; color: transparent;">Literature</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-4" style="margin-bottom: 2em; margin-top: 1em; height: 600px;">
+        <a href="google.com">
+          <div class="card h-100" style="border: none;">
+            <img src="https://i.pinimg.com/564x/d6/df/26/d6df26be6206ad7f450acff3e7bae915.jpg"
+              class="card-img-top h-100" alt="Myths and Legends">
+            <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+              <div class="text" style="text-decoration: none; color: transparent;">Myths and Legends</div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-4" style="margin-bottom: 2em; margin-top: 1em; height: 600px;">
+        <a href="google.com">
+          <div class="card h-100" style="border: none;">
+            <img src="https://i.pinimg.com/564x/65/b8/5e/65b85e515c97fbd1ddb8c8546bc04171.jpg"
+              class="card-img-top h-100" alt="Places">
+            <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+              <div class="text" style="text-decoration: none; color: transparent;">Places</div>
+            </div>
+          </div>
+        </a>
+      </div>
+  </cards>
+
+

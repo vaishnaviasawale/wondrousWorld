@@ -1,0 +1,58 @@
+<% layout('/layouts/boilerplate') %>
+<style>
+    img {
+        max-width: 700px;
+        max-height: 500px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+</style>
+    <p style="text-align: center; font-family: 'Playfair Display', serif; font-size: 300%; margin-top: 3%; "><%= art.title %></p>
+    <p style="text-align: center; font-family: 'Playfair Display', serif; font-size: 200%; margin-top: 1%; "><%= art.author %>
+    <% if(art.profession !== "") { %>
+        <i style="font-size: 70%;">, <%= art.profession %></i>
+    <% } %>
+    </p>   
+    <p style="text-align: center; font-family: 'Playfair Display', serif; font-size: 150%; margin-top: 2%; ">Published: <%= art.date %></p>
+    <% if(art.image !== "undefined") { %>
+        <div id="articleCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <% art.images.forEach((img, i) => { %>
+                    <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
+                        <img src="<%= img.url %>" class="d-block" alt="">
+                    </div>
+                <% }) %>
+            </div>
+            <% if (art.images.length > 1) { %>
+            <button class="carousel-control-prev" type="button" data-bs-target="#articleCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#articleCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+            <% } %>
+          </div>
+    <% } %>
+        
+        <!-- <img style="margin-bottom: 2%;" src="" > -->
+        
+    
+    <p style="margin-left: 10%; margin-right: 10%; font-size: 120%;"><%= art.para %></p>
+    <br><br>
+        <footer>
+            <% if(currentUser && art.owner.equals(currentUser._id)) {%>
+            <a href="/articles/<%= art._id %>/edit">Edit this article</a>
+            <br><br>
+            <!-- Wrong coz we don't need a route like this -->
+            <!-- <a href="/articles/art._id %>/delete">Delete this article</a> -->
+            
+                <form action="/articles/<%= art._id %>?_method=DELETE" method="POST"><button>Delete this Article</button></form>
+            <% } %>
+            <svg style="margin-left: 10%;" xmlns="http://www.w3.org/2000/svg" width="16" height="" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+              </svg><a style="color: black; font-size: 150%; margin-left: 0.5%;" href="/articles">All Articles</a>
+        </footer>

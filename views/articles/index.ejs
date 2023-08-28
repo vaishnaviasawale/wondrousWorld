@@ -1,0 +1,58 @@
+<% layout('/layouts/boilerplate') %>
+    <style>
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            background-image: url("https://img.freepik.com/premium-photo/old-paper-background-manuscript-with-shabby-texture_84485-3112.jpg?w=2000");
+            background-repeat: no-repeat;
+            background-attachment: fixed;  
+            background-size: cover;
+        }
+
+        a:link {
+            color: white;
+        }
+
+        a:visited {
+            color: white;
+        }
+
+        a:hover {
+            color: white;
+        }
+
+        a:active {
+            color: white;
+        }
+
+        a:link, a:visited {
+            text-decoration: none;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+            transition: ease-in-out;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            transition: ease-in-out;
+        }
+    </style>
+
+    <p style="color: black; margin-left: 50px; font-size: 3em;">Articles</p>
+    <div>
+        <button style=" border: 0cap; border-color: black; margin-left: 70px; background-color: transparent;"><b><a href="/articles/new" style="color: black; font-size: 1.5em; margin: 10px;">Post Article</a></b></button>
+    </div>
+    <% for(let article of art) { %>
+     <a href="/articles/<%= article._id %>">
+        <div class="card" style="margin-left: 50px; margin-right: 50px; margin-top: 20px; background-color: black; border-radius: 10px;">
+            <h2 style="margin-left: 30px; margin-right: 30px; margin-top: 10px; margin-bottom: 10px;">
+            <%= article.title %></h2>
+            <p style="margin-left: 40px; margin-right: 30px; margin-bottom: 20px;"><i>By <%= article.author %></i></p> 
+        </div>
+     </a>
+    <% } %>

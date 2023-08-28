@@ -1,0 +1,106 @@
+<style>
+    .dropdown-item:focus,
+    .dropdown-item:hover {
+      background-color: white;
+      color: black !important;
+    }
+
+    .overlay:hover {
+      opacity: 0.5 !important;
+      transition: .5s ease !important;
+      background-color: black !important;
+    }
+
+    .overlay:hover .text {
+      color: white !important;
+      font-size: 2em;
+      position: absolute;
+      transition: .1s !important;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+  </style>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top" style="background-color: black; color: white;">
+    <div class="container-fluid" style="display: flex; justify-content: center;">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/" style="color: white; font-size: 1.2em;">Home</a>
+          </li>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown"
+            aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="display: none;"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <button class="btn btn-dark" data-bs-toggle="dropdown" aria-expanded="false"
+                  style="background-color: black; border-color: black; color: white; font-size: 1.2em;">
+                  Navigate
+                </button>
+                <ul class="dropdown-menu" style="background-color: black; ">
+                  <li><a class="dropdown-item" style="color: white;" href="/paintings">Paintings</a></li>
+                  <li><a class="dropdown-item" style="color: white;" href="/statues">Statues</a></li>
+                  <li><a class="dropdown-item" style="color: white;" href="/monuments">Monuments</a></li>
+                  <li><a class="dropdown-item" style="color: white;" href="/literature">Literature</a></li>
+                  <li><a class="dropdown-item" style="color: white;" href="/mythsandlegends">Myths and Legends</a></li>
+                  <li><a class="dropdown-item" style="color: white;" href="/places">Places</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <li class="nav-item">
+            <a class="nav-link" href="/articles" style="color: white; font-size: 1.2em;">Articles</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color: white; font-size: 1.2em;">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container-fluid text-center">
+      <span class="navbar-brand mb-0 h1" style="font-size: 2.5em; font-weight: 100;">WONDROUS WORLD</span>
+    </div>
+    <div class="container-fluid">
+      <form class="d-flex ml-auto" role="search">
+        <input class="form-control me-2" aria-label="Search" style="width: 300px;">
+        <button class="btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white"
+            class="bi bi-search" viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+          </svg></button>
+      </form>
+    </div>
+  </nav>
+
+  <!-- <input type="text" name="" id="myInput" placeholder="search here..." onkeyup="searchFun()">
+
+  <script>
+    const searchFun = () => {
+      let filter = document.getElementById('myInput').value.toUpperCase();
+      let All = document.getElementById('allSearch');
+      let allCards = All.getElementsByClassName('card');
+      for(var i = 0; i < allCards.length; i++) {
+        let textCard = allCards[i].getElementsByClassName('text')[0].innerText;
+        if (textCard.toUpperCase().indexOf(filter) > -1) {
+          allCards[i].style.display = "";
+        } else {
+          allCards[i].style.display = "none";
+        }
+      }
+    }
+  </script> -->
+
+  <!-- <script>
+    const searchFun = () => {
+      let filter = document.getElementById('myInput').value.toUpperCase();
+      let All = document.getElementById('allSearch');
+      let state = All.getElementsByClassName('card');
+    }
+  </script> -->
+  <!-- see folder 51 video 8 for adding login logout -->

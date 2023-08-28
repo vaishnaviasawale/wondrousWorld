@@ -1,0 +1,20 @@
+<!-- role is written for accessibility purposes; it is announced if someone can't read it -->
+<!-- success is an empty array by default so we check it's length coz 0 is a falsey length-->
+<% if (success && success.length) {%>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <%= success %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<% } %>
+
+<!-- for error -->
+<% if (error && error.length) {%>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <%= error %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+<% } %>

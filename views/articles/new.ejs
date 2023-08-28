@@ -1,0 +1,167 @@
+<% layout('/layouts/boilerplate') %>
+<style>
+    body {
+        background-image: url("https://images.unsplash.com/photo-1555505019-8c3f1c4aba5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFyZHdvb2R8ZW58MHx8MHx8fDA%3D&w=1000&q=80");
+        background-repeat: no-repeat;
+        background-attachment: fixed;  
+        background-size: cover;
+    }
+
+    .card {
+        background-image: url("https://img.freepik.com/premium-photo/abstract-aged-background-blank-brown-grunge-manuscript-old-texture-old-paper-rough-vintage_213524-234.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;  
+        background-size: cover;
+        margin-left: 10%; 
+        margin-right: 10%; 
+        margin-top: 5%; 
+        border-radius: 10px; 
+        border-width: 4px; 
+        border-color: black; 
+        box-shadow: 10px 10px #0d0c0c;;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+        transition: ease-in-out;
+    }
+
+    .inputClass {
+        border-radius: 10px; 
+        width: 100%; 
+        padding-left: 20px; 
+        padding-right: 20px;
+        border-color: black;
+        border-width: 2px;
+    }
+
+    p {
+        text-align: center; 
+        font-family: 'Playfair Display', serif; 
+        font-size: 300%; 
+        margin-top: 3%; 
+    }
+
+    #outer {
+        margin-left: 10%; 
+        margin-right: 10%; 
+        font-size: 20px;
+    }
+
+    textarea {
+        width: 100%; 
+        height: 500px;
+    }
+
+    .requiredField:after {
+        content: "*";
+        color: rgba(255, 0, 0, 0.783);
+    }
+</style>
+<div class="card">
+    <p>Post an Article</p>
+    <span class="ml-auto">
+        <% if(!currentUser) {%>
+            <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link" href="/register">Register</a>
+        <% } else { %>
+            <a class="nav-link" href="/logout">Logout</a>
+        <% } %>
+    </span>
+    <div id="outer">
+        <!-- we tell the browser to not validate the form so that Bootstrap can take over instead -->
+        <!-- it stops the functionality of 'required' but we do need to write 'required' everywhere -->
+        <!-- see folder 43 file 2 -->
+    <form action="/articles" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div>
+            <!-- "required" is for browser validation  -->
+            <label class="requiredField" for="title">Title</label><br>
+            <input class="inputClass form-control" type="text" id="title" name="article[title]" placeholder="Please enter the title of your article" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <!--we are grouping things under article[ ]  -->
+            <!-- when our data is sent via POST request toour express app to our server everything in request.body will be saved under article -->
+        </div>
+        <br>
+        <div>
+            <label class="requiredField" for="author">Author</label><br>
+            <input class="inputClass form-control" type="text" id="author" name="article[author]" placeholder="Please enter the author's name" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <br>
+        <div>
+            <label for="profession">Profession</label><br>
+            <input class="inputClass" type="text" id="profession" name="article[profession]"  placeholder="Please enter the author's profession">
+        </div>
+        <br>
+        <!-- https://blog.netgloo.com/2014/05/31/disabling-an-input-field-in-a-form-and-sending-data/ -->
+        <div>
+            <label class="requiredField" for="date">Date</label><br>
+            <input class="inputClass" readonly="readonly" type="date" id="date" name="article[date]" />
+        </div>
+        <br>
+        <!-- <div>
+            <label for="image">Image</label><br>
+            <input class="inputClass" type="text" id="image" name="article[image]" placeholder="Please paste a link to an image">
+        </div> -->
+        <!-- <div class="mb-3">
+            <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+            <input class="form-control" type="file" id="formFileMultiple" multiple>
+          </div> --> 
+          <!-- FOLDER 54 VIDEO 10 -->
+        <div>
+            <label for="image">Image</label><br>
+            <input class="inputClass" type="file" id="image" name="image" placeholder="Please upload image(s)" multiple>
+        </div>
+        <br>
+        <div>
+            <label class="requiredField" for="para">Content</label><br>
+            <textarea style="height: 750px;" class="inputClass form-control" type="text-box" id="para" name="article[para]" placeholder="Please enter the article's content" required></textarea>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <br>
+        <button style="background-color: transparent;">Post Article</button>
+        <br><br>
+    </form>
+    </div>
+<span style="margin-bottom: 5%;"><svg style="margin-left: 7%;" xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+  </svg><a style="color: black; font-size: 150%; margin-left: 0.5%;" href="/articles">All Articles</a></span>
+</div>
+
+<script>
+    document.getElementById("date").valueAsDate = new Date();
+</script>
+
+<!-- FOLDER 49 VIDEO 3 moving this into new file -->
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation') //we have defined the class validated-form in the above form
+    // we use const for forms because it is the only form; can use var too
+
+  // Loop over them and prevent submission
+  
+//   Array.from(forms) //turn it into an array
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
+<!-- can move script to boilerplate; see folder 43 video 2 -->

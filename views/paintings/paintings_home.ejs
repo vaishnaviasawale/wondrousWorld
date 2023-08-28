@@ -1,0 +1,378 @@
+<% layout('/layouts/boilerplate') %>
+<style>
+  body {
+    background-color: black;
+  }
+</style>
+
+<input type="text" name="" id="myInput" placeholder="search here..." onkeyup="searchFun()">
+
+  <p style="color: white; margin-left: 40px; font-size: 3em;">Paintings</p>
+    <div class="card-columns" id="allSearch" style="margin-left: 40px; margin-right: 40px; margin-top: 15px;">
+
+      <!-- 1 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/1">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/1200px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" alt="Mona Lisa">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">Mona Lisa</div>
+        </div>
+        </a>
+      </div>
+
+      <!-- 2 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/2">
+        <img class="card-img-top" src="https://ids.si.edu/ids/iiif/FS-6053_02/full/500,/0/default.jpg" alt="Peach Festival of the Queen Mother of the West">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">Peach Festival of the Queen Mother of the West</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 3 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/3">
+        <img class="card-img-top" src="https://i.pinimg.com/736x/ee/3e/dc/ee3edca76715f860fcc669d5fecf2ce7--ballet-art-ballet-dancers.jpg" alt="Dancers Bending Down (The Ballerinas)">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">Dancers Bending Down (The Ballerinas)</div>
+        </div>
+      </a>
+      </div>
+      
+      <!-- 4 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/4">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1200px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg" alt="The Starry Night">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">The Starry Night</div>
+        </div>
+        </a>
+      </div>
+      
+      <!-- 5 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/5">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/1665_Girl_with_a_Pearl_Earring.jpg/800px-1665_Girl_with_a_Pearl_Earring.jpg" alt="Girl With a Pearl Earring">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">Girl With a Pearl Earring</div>
+        </div>
+      </a>
+      </div>
+      
+      <!-- 6 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/6">
+        <img class="card-img-top" src="https://blog.singulart.com/wp-content/uploads/2019/08/tour_img-312981-148-1.jpg" alt="The Last Supper">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">The Last Supper</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 7 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/7">
+        <img class="card-img-top" src="https://cdn.shopify.com/s/files/1/0849/4704/files/guernica_sartle.jpg?v=1582528493" alt="Guernica">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">Guernica</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 8 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/8">
+        <img class="card-img-top" src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/las-meninas-interpretation-racu-alexandru.jpg" alt="Las Meninas">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">Las Meninas</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 9 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/9">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Grant_Wood_-_American_Gothic_-_Google_Art_Project.jpg" alt="American Gothic">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">American Gothic</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 10 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/10">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/A_Sunday_on_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg/1200px-A_Sunday_on_La_Grande_Jatte%2C_Georges_Seurat%2C_1884.jpg" alt="A Sunday Afternoon on the Island of La Grande Jatte">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">A Sunday Afternoon on the Island of La Grande Jatte</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 11 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/11">
+        <img class="card-img-top" src="https://i.guim.co.uk/img/media/89f192d86a4a05a6084fa500f4bfb3963b10d2ec/0_1066_4547_2728/master/4547.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=57c3304ce43668612ccbf0459a32b293" alt="The Night Watch">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">The Night Watch</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 12 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/12">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Vincent_van_Gogh_%281853-1890%29_Caf%C3%A9terras_bij_nacht_%28place_du_Forum%29_Kr%C3%B6ller-M%C3%BCller_Museum_Otterlo_23-8-2016_13-35-40.JPG" alt="Cafe Terrace at Night">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">Cafe Terrace at Night</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 13 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/13">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Whistlers_Mother_high_res.jpg" alt="Whistler's Mother">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">Whistler's Mother</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 14 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/14">
+        <img class="card-img-top" src="https://cdn.shopify.com/s/files/1/0969/9128/products/Glow_of_Hope-_Woman_With_the_Lamp_-_by_S_L_Haldankar_copy.jpg?v=1569011844" alt="Glow of Hope">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">Glow of Hope</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 15 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/15">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Leonardo_da_Vinci%2C_Salvator_Mundi%2C_c.1500%2C_oil_on_walnut%2C_45.4_%C3%97_65.6_cm.jpg" alt="Salvator Mundi">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">Salvator Mundi</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 16 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/16">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/0/06/La_Boh%C3%A9mienne_endormie.jpg" alt="The Sleeping Gypsy">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">The Sleeping Gypsy</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 17 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/17">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/4/40/Auguste_Renoir_-_Dance_at_Le_Moulin_de_la_Galette_-_Mus%C3%A9e_d%27Orsay_RF_2739_%28derivative_work_-_AutoContrast_edit_in_LCH_space%29.jpg" alt="Bal du moulin de la Galette">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">Bal du moulin de la Galette</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 18 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/18">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Monet_-_Impression%2C_Sunrise.jpg/1200px-Monet_-_Impression%2C_Sunrise.jpg" alt="Impression, Sunrise">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">Impression, Sunrise</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 19 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/19">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/El_Tres_de_Mayo%2C_by_Francisco_de_Goya%2C_from_Prado_thin_black_margin.jpg/1200px-El_Tres_de_Mayo%2C_by_Francisco_de_Goya%2C_from_Prado_thin_black_margin.jpg" alt="The Third of May 1808">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">The Third of May 1808</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 20 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/20">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Lady_with_an_Ermine_-_Leonardo_da_Vinci_-_Google_Art_Project.jpg/1200px-Lady_with_an_Ermine_-_Leonardo_da_Vinci_-_Google_Art_Project.jpg" alt="Lady with an Ermine">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">Lady with an Ermine</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 21 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/21">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg" alt="The Storm on the Sea of Galilee">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">The Storm on the Sea of Galilee</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 22 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/22">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/4/43/Joean_Honor%C3%A9_Fragonard_-_The_Swing.jpg" alt="The Swing">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">The Swing</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 23 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/23">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg/1200px-Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg" alt="The Scream">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">The Scream</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 24 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/24">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Boreas.jpg/250px-Boreas.jpg" alt="Boreas">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">Boreas</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 25 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/25">
+        <img class="card-img-top" src="https://www.artzolo.com/sites/default/files/styles/product_full/public/uploads/multi/1817/largest/yasoda_krishna.jpg" alt="Yasoda Krishna">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">Yasoda Krishna</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 26 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/26">
+        <img class="card-img-top" src="https://uploads3.wikiart.org/images/alma-tadema-lawrence/among-the-ruins-1904.jpg!Large.jpg" alt="Among the Ruins">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">Among the Ruins</div>
+        </div>  
+      </a>
+      </div>
+
+      <!-- 27 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/27">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Tsunami_by_hokusai_19th_century.jpg" alt="The Great Wave off Kanagawa">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">The Great Wave off Kanagawa</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 28 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/28">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Madri_-_Raja_Ravi_Varma_Print.jpg" alt="Madri">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">Madri</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 29 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/29">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/e/ed/John_Singer_Sargent_-_Carnation%2C_Lily%2C_Lily%2C_Rose_-_Google_Art_Project.jpg" alt="Carnation, Lily, Lily, Rose">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">Carnation, Lily, Lily, Rose</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 30 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/30">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Flaming_June%2C_by_Frederic_Lord_Leighton_%281830-1896%29.jpg" alt="Flaming June">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">Flaming June</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 31 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/31">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Mikhail_Nesterov_001.jpg/1200px-Mikhail_Nesterov_001.jpg" alt="The Vision to the Youth Bartholomew">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">The Vision to the Youth Bartholomew</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 32 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/32">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/f/fd/John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit.jpg" alt="The Lady of Shalott">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">The Lady of Shalott</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 33 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/33">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/0/00/Ravi_Varma-Princess_Damayanthi_talking_with_Royal_Swan_about_Nala.jpg" alt="Princess Damayanti Talking with Royal Swan about Nala">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">Princess Damayanti Talking with Royal Swan about Nala</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 34 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/34">
+        <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Mary_Cassatt_-_The_Boating_Party_-_Google_Art_Project.jpg" alt="The Boating Party">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">The Boating Party</div>
+        </div>
+      </a>
+      </div>
+
+      <!-- 35 -->
+      <div class="card" style=" border-color: black; margin-bottom: 10px; margin-top: 10px;">
+        <a href="paintings/35">
+        <img class="card-img-top" src="https://media.nga.gov/iiif/99758d9d-c10b-4d02-a198-7e49afb1f3a6/full/full/0/default.jpg?attachment_filename=woman_with_a_parasol_-_madame_monet_and_her_son_1983.1.29.jpg" alt="The Woman with a Parasol">
+        <div class="overlay card-img-overlay text-white d-flex flex-column justify-content-center">
+          <div class="text" style="text-decoration: none; color: transparent;">The Woman with a Parasol</div>
+        </div>
+      </a>
+      </div>
+
+      <script src="./javascripts/search"></script>
+      <!-- <script>
+        const searchFun = () => {
+          let filter = document.getElementById('myInput').value.toUpperCase();
+          let All = document.getElementById('allSearch');
+          let allCards = All.getElementsByClassName('card');
+          for(var i = 0; i < allCards.length; i++) {
+            let textCard = allCards[i].getElementsByClassName('text')[0].innerText;
+            if (textCard.toUpperCase().indexOf(filter) > -1) {
+              allCards[i].style.display = "";
+            } else {
+              allCards[i].style.display = "none";
+            }
+          }
+        }
+      </script> -->

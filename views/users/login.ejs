@@ -1,0 +1,38 @@
+<% layout('layouts/boilerplate') %>
+
+<h1>Login</h1>
+<form action="/login" method="POST" class="needs-validation" novalidate>
+    <div>
+        <label class="requiredField" for="username">Username</label><br>
+        <input class="inputClass form-control" type="text" id="username" name="username" placeholder="Please enter your username" required>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+    </div>
+    <div>
+        <label class="requiredField" for="password">Password</label><br>
+        <input class="inputClass form-control" type="password" id="password" name="password" placeholder="Please enter your password" required>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+    </div>
+    <button class="btn btn-success">Login</button>
+</form>
+
+<script>
+(function () {
+  'use strict'
+  const forms = document.querySelectorAll('.needs-validation') 
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>

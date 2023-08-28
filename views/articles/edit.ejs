@@ -1,0 +1,156 @@
+<% layout('/layouts/boilerplate') %>
+<style>
+    body {
+        background-image: url("https://images.unsplash.com/photo-1555505019-8c3f1c4aba5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFyZHdvb2R8ZW58MHx8MHx8fDA%3D&w=1000&q=80");
+        background-repeat: no-repeat;
+        background-attachment: fixed;  
+        background-size: cover;
+        color: black !important;
+    }
+
+    .card {
+        background-image: url("https://img.freepik.com/premium-photo/abstract-aged-background-blank-brown-grunge-manuscript-old-texture-old-paper-rough-vintage_213524-234.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;  
+        background-size: cover;
+        margin-left: 10%; 
+        margin-right: 10%; 
+        margin-top: 5%; 
+        border-radius: 10px; 
+        border-width: 4px; 
+        border-color: black; 
+        box-shadow: 10px 10px #0d0c0c;;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+        transition: ease-in-out;
+    }
+
+    .inputClass {
+        border-radius: 10px; 
+        width: 100%; 
+        padding-left: 20px; 
+        padding-right: 20px;
+        border-color: black;
+        border-width: 2px;
+    }
+
+    p {
+        text-align: center; 
+        font-family: 'Playfair Display', serif; 
+        font-size: 300%; 
+        margin-top: 3%; 
+    }
+
+    #outer {
+        margin-left: 10%; 
+        margin-right: 10%; 
+        font-size: 20px;
+    }
+
+    textarea {
+        width: 100%; 
+        height: 500px;
+    }
+
+    .requiredField:after {
+        content: "*";
+        color: rgba(255, 0, 0, 0.783);
+    }
+</style>
+
+<div class="card">
+    <p>Edit this Article</p>
+    <div id="outer">
+    <!-- forms really only send a GET or POST request from the browser, so we can fake a PUT, PATCH, DELETE etc using method over-ride-->
+    <!-- install it by npm i method-override and require it in app.js -->
+    <!-- This is a query string and it does not have to be _method, just change what you pass in to method-override in app.use in app.js -->
+    <form action="/articles/<%= art._id %>?_method=PUT" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div>
+            <label class="requiredField" for="title">Title</label>
+            <!-- value is anatrribute we use to set the starting value -->
+            <input class="inputClass form-control" type="text" id="title" name="article[title]" value="<%= art.title %>" required>
+            <!--we are grouping things under article[ ]  -->
+            <!-- when our data is sent via POST request to our express app to our server everything in request.body will be saved under article -->
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <br>
+        <div>
+            <label class="requiredField" for="author">Author</label>
+            <input class="inputClass form-control" type="text" id="author" name="article[author]" value="<%= art.author %>" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <br>
+        <div>
+            <label for="profession">Profession</label><br>
+            <input class="inputClass" type="text" id="profession" name="article[profession]" value="<%= art.profession ? art.profession : ' ' %>">
+        </div>
+        <br>
+        <div>
+            <label class="requiredField" for="date">Date</label>
+            <input class="inputClass" type="text" id="date" name="article[date]" value="<%= art.date %>">
+        </div>
+        <br>
+        <!-- <div>
+            <label for="image">Image</label>
+            <input class="inputClass" type="text" id="image" name="article[image]" value="">
+        </div> -->
+        <br>
+        <div>
+            <% art.images.forEach(function(img, i) { %>
+                <img src="<%= img.thumbnail %>" class="img-thumbnail">
+                <div class="form-check-inline">
+                    <input type="checkbox" id="image-<%=i%>" name="deleteImages[]" value="<%=img.filename%>">
+                </div>
+                <label for="image-<%=i%>">Delete?</label>
+                <br>
+            <% }) %>
+        </div>
+        <div>
+            <label for="image">Add Image(s)</label><br>
+            <input class="inputClass" type="file" id="image" name="image" multiple>
+        </div>
+        <br>
+        <div>
+            <label class="requiredField" for="para">Content</label>
+            <textarea class="inputClass form-control" type="text" id="para" name="article[para]" required><%= art.para %> </textarea>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <br>
+        <button style="background-color: transparent;">Update Article</button>
+        <br><br>
+    </form>
+    </div>
+    <span style="margin-bottom: 5%;"><svg style="margin-left: 7%;" xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+      </svg><a style="color: black; font-size: 150%; margin-left: 0.5%;" href="/articles/<%= art._id %>">Back to My Article</a></span>
+</div>
+
+<script>
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()    
+</script>
